@@ -1,0 +1,15 @@
+<h2>Edit a Post</h2>
+<br />
+
+<%= form_with model: @post, local: true do |form|%>
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+    <br />
+    <%= form.label :content%>
+    <%= form.text_area :content, :cols => 300, :rows => 10%>
+    <br />
+    <%= form.submit 'Edit Blog Post', class:'clicker'%>
+     <%= form.submit 'Clear New Changes', :type => 'reset', class:'clicker'%>
+<% end %>
+
+<button type=onclick > <%= link_to 'Home Page', posts_path, class:'clicks' %> </button>
