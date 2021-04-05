@@ -5,14 +5,17 @@
 
 <body>
 
-<button type=onclick > <%= link_to 'New Blog Post', new_post_path, class:'clicks' %> </button>
+<div class="parent">
+  <ul>
+    <% @posts.each do |post| %>
+      <li>
+       <%= link_to post.title, post_path(post) %>
+      </li>
+    <% end %>
+  </ul>
+</div>
 
-<ul>
-  <% @posts.each do |post| %>
-    <li>
-     <%= link_to post.title, post_path(post) %>
-    </li>
-  <% end %>
-</ul>
+
+<button type=onclick > <%= link_to 'New Blog Post', new_post_path, class:'clicks' %> </button>
 
 </body>
